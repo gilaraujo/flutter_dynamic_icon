@@ -1,6 +1,6 @@
 # flutter_dynamic_icon
 
-A flutter plugin for dynamically changing app icon and app icon batch number in the mobile platform. Supports **only iOS** (with version > `10.3`).
+A flutter plugin for dynamically changing app icon and app icon batch number in the mobile platform. Supports **iOS** (with version > `10.3`) and Android.
 
 ## Usage
 
@@ -129,6 +129,60 @@ Here is my `Info.plist` after adding Alternate Icons
 	<false/>
 </dict>
 </plist>
+
+```
+
+### Android Integration
+
+1. First let us put a few images for app icons, they are
+    * `./android/app/src/main/res/mipmap/teamfortress.png`
+    * `./android/app/src/main/res/mipmap/photos.png`
+    * `./android/app/src/main/res/mipmap/chills.png`
+
+2. We need to setup the `AndroidManifest.xml`
+
+#### Raw
+
+```xml
+<activity-alias
+    android:icon="@mipmap/teamfortress"
+    android:name=".teamfortress"
+    android:enabled="false"
+    android:targetActivity="io.flutter.embedding.android.FlutterActivity">
+    <meta-data
+        android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+        android:value="true" />
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+    </intent-filter>
+</activity-alias>
+<activity-alias
+    android:icon="@mipmap/photos"
+    android:name=".photos"
+    android:enabled="false"
+    android:targetActivity="io.flutter.embedding.android.FlutterActivity">
+    <meta-data
+        android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+        android:value="true" />
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+    </intent-filter>
+</activity-alias>
+<activity-alias
+    android:icon="@mipmap/chills"
+    android:name=".chills"
+    android:enabled="false"
+    android:targetActivity="io.flutter.embedding.android.FlutterActivity">
+    <meta-data
+        android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+        android:value="true" />
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+    </intent-filter>
+</activity-alias>
 
 ```
 
