@@ -82,15 +82,15 @@ class MethodCallHandlerImpl implements MethodCallHandler {
             PackageManager.DONT_KILL_APP
     );
 
-    for(ActivityInfo activity: oldName) {
-      if(!activity.name.equals(className)) {
-        pm.setComponentEnabledSetting(
-                new ComponentName(packageName, activity.name),
-                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                PackageManager.DONT_KILL_APP
-        );
-      }
-    }
+//    for(ActivityInfo activity: oldName) {
+//      if(!activity.name.equals(className)) {
+//        pm.setComponentEnabledSetting(
+//                new ComponentName(packageName, activity.name),
+//                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+//                PackageManager.DONT_KILL_APP
+//        );
+//      }
+//    }
   }
 
   public void resetIcon() {
