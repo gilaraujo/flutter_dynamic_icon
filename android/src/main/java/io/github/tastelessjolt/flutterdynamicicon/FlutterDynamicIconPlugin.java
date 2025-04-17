@@ -10,12 +10,6 @@ public class FlutterDynamicIconPlugin implements FlutterPlugin {
   private static final String CHANNEL_NAME = "flutter_dynamic_icon";
   private MethodChannel channel;
 
-  @SuppressWarnings("deprecation")
-  public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
-    final FlutterDynamicIconPlugin plugin = new FlutterDynamicIconPlugin();
-    plugin.setupChannel(registrar.messenger(), registrar.context());
-  }
-
   @Override
   public void onAttachedToEngine(FlutterPlugin.FlutterPluginBinding binding) {
     setupChannel(binding.getBinaryMessenger(), binding.getApplicationContext());
