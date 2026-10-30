@@ -1,4 +1,4 @@
-#import "FLTDynamicIconPlugin.h"
+#import "include/flutter_dynamic_icon/FLTDynamicIconPlugin.h"
 
 @implementation FLTDynamicIconPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
